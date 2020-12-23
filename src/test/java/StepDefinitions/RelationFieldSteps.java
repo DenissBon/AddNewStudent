@@ -52,6 +52,7 @@ public class RelationFieldSteps extends CommonFunctions {
     public void i_should_see_a_warning_message() throws InterruptedException {
         Thread.sleep(1000);
         addNewStudentPage.InvalidRelationMsg.isDisplayed();
+        //When testing manually the message isn't present
 
     }
 }
