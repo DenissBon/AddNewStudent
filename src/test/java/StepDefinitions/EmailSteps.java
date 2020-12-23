@@ -30,7 +30,7 @@ public class EmailSteps extends CommonFunctions {
     @Then("^Email should be added$")
     public void email_should_be_added()
     {
-        //Assert.assertEquals(Constants.Green_Outlining, addNewStudentPage.GetOutlineColor());
+        Assert.assertEquals(Constants.Green_Outlining, addNewStudentPage.EmailField.getCssValue("border-color"));
     }
 
     @When("^I type in invalid email address \"(.*?)\"$")

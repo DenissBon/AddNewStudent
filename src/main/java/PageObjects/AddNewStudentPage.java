@@ -33,6 +33,18 @@ public class AddNewStudentPage {
     @FindBy(xpath = "//em[@id='email-error']")
     public WebElement InvalidEmailMsg;
 
+
+    @FindBy(css = "#select2-relation-container")
+    public WebElement RelationField;
+
+    @FindBy(xpath = "//body/span[1]/span[1]/span[1]/input[1]")
+    public WebElement RelationEntryField;
+
+    @FindBy(css = "#relation-error")
+    public WebElement InvalidRelationMsg;
+
+
+
     public void AddTimeSlotBtnClick()
     {
         AddNewTimeSlotBtn.click();
@@ -73,9 +85,20 @@ public class AddNewStudentPage {
         CreateStudentBtn.click();
     }
 
-    public void GetOutlineColor()
+    public void RelationFieldClick()
     {
-        EmailField.getCssValue("border-color");
+        RelationField.click();
     }
+
+    public void EnterValidRelation()
+    {
+        RelationEntryField.sendKeys("Brother");
+    }
+    public void EnterInvalidRelation()
+    {
+    RelationEntryField.sendKeys("123456789");
+    }
+
+
 
 }
