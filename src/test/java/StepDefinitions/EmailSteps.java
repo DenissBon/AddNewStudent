@@ -42,6 +42,6 @@ public class EmailSteps extends CommonFunctions {
     @Then("^Should receive a warning message$")
     public void should_receive_a_warning_message()
     {
-    addNewStudentPage.InvalidEmailMsg.isDisplayed();
+    Assert.assertTrue(addNewStudentPage.InvalidEmailMsg.isDisplayed());
     }
 }

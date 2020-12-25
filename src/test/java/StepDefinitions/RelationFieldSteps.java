@@ -51,8 +51,8 @@ public class RelationFieldSteps extends CommonFunctions {
     @Then("^I should see a warning message$")
     public void i_should_see_a_warning_message() throws InterruptedException {
         Thread.sleep(1000);
-        addNewStudentPage.InvalidRelationMsg.isDisplayed();
-        //When testing manually the message isn't present
+        Assert.assertTrue(addNewStudentPage.InvalidRelationMsg.isDisplayed());
+
 
     }
 }

@@ -2,6 +2,7 @@ package PageObjects;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,7 +22,7 @@ public class AddNewStudentPage {
     @FindBy(xpath = "//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/button[1]/i[1]")
     public WebElement DeleteTimeSlotBtn;
 
-    @FindBy(xpath = "//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/span[1]/span[1]/span[1]")
+    @FindBy(xpath = "//span[@id='select2-routine_id-u3-container']")
     public WebElement NewSlot;
 
     @FindBy(xpath = "//input[@id='email']")
@@ -43,9 +44,9 @@ public class AddNewStudentPage {
     @FindBy(css = "#relation-error")
     public WebElement InvalidRelationMsg;
 
-
-
-    public void AddTimeSlotBtnClick()
+    @FindBy(xpath = "//input[@id='phone']")
+    public WebElement PhoneField;
+      public void AddTimeSlotBtnClick()
     {
         AddNewTimeSlotBtn.click();
     }
@@ -56,18 +57,8 @@ public class AddNewStudentPage {
     }
 
 
-    public void SlotIsAdded()
-    {
-        Assert.assertTrue(NewSlot.isDisplayed());
-    }
 
-    public void SlotIsRemoved()
-    {
-        Assert.assertEquals(0, NewSlot);
-        //Assert.assertFalse(NewSlot.isDisplayed());
-        //Assert.assertNull(NewSlot);
-        //None of the methods work
-    }
+
 
 
     public void EnterValidEmail()
@@ -94,11 +85,131 @@ public class AddNewStudentPage {
     {
         RelationEntryField.sendKeys("Brother");
     }
-    public void EnterInvalidRelation()
+    public void EnterInvalidRelation() {
+        RelationEntryField.sendKeys("123456789");
+    }
+    public void PhoneFieldClick(){PhoneField.click();}
+
+    @FindBy(xpath = "//em[@id='phone-error']")
+    public WebElement InvalidPhoneMsg;
+
+    public void PhoneFieldEnter()
     {
-    RelationEntryField.sendKeys("123456789");
+    PhoneField.sendKeys(Keys.ENTER);
     }
 
 
 
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -12,6 +12,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import javax.annotation.Nullable;
+
 public class TimeSlotSteps extends CommonFunctions {
 
     LoginPage loginPage = new LoginPage(driver);
@@ -69,7 +71,7 @@ public class TimeSlotSteps extends CommonFunctions {
 
 
         Thread.sleep(500);
-        addNewStudentPage.SlotIsAdded();
+        Assert.assertTrue(addNewStudentPage.DeleteTimeSlotBtn.isDisplayed());
 
     }
 
@@ -84,7 +86,9 @@ public class TimeSlotSteps extends CommonFunctions {
     public void i_should_see_Time_Slot_being_removed() throws InterruptedException {
 
         Thread.sleep(1000);
-        addNewStudentPage.SlotIsRemoved();
+        Assert.assertFalse(addNewStudentPage.DeleteTimeSlotBtn.isDisplayed());
+        //Assert.assertEquals(0, addNewStudentPage.NewSlot);
+        //Assert.assertNull(addNewStudentPage.NewSlot);
 
     }
 
